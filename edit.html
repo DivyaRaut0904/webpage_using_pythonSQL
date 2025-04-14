@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Record</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label>Name:</label>
+        <input type="text" name="name" value="{{ record[1] }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Email:</label>
+        <input type="email" name="email" value="{{ record[2] }}" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-success">Update</button>
+</form>
+{% endblock %}

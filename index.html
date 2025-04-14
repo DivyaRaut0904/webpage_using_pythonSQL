@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="{{ url_for('add') }}" class="btn btn-primary mb-3">Add New Record</a>
+<table class="table table-bordered">
+    <thead>
+        <tr><th>ID</th><th>Name</th><th>Email</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+        {% for record in records %}
+        <tr>
+            <td>{{ record[0] }}</td>
+            <td>{{ record[1] }}</td>
+            <td>{{ record[2] }}</td>
+            <td>
+                <a href="{{ url_for('edit', id=record[0]) }}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{{ url_for('delete', id=record[0]) }}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
